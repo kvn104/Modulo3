@@ -1,0 +1,38 @@
+figure {
+    background-color: yellow;
+}
+
+img {
+    max-width: 100%;
+}
+
+.alerta {
+    font-size: 40px;
+    color: red;
+    text-align: center;
+}
+
+.contenedorPadreRecibido,
+.contenedorPadreEnviado {
+    display: flex;
+}
+
+.contenedorPadreEnviado {
+    flex-direction: row-reverse;
+}
+
+.recibido {
+    background-color: chartreuse;
+}
+
+.enviado {
+    background-color: fuchsia;
+}
+
+#contenedorMensajeEnviado {
+    display: none;
+}
+
+#chatCentral {
+    padding-top: 50px;
+}

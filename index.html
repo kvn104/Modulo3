@@ -1,11 +1,168 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <h1>Hola , esta es la version 2</h1>
-</body>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Página Chat</title>
+        <link rel="stylesheet" href="./assets/css/estilos.css">
+        <link rel="stylesheet"
+            href="./assets/css/css_bootstrap/bootstrap.min.css">
+    </head>
+    <body onload="asignarEventos()">
+
+        <div class="container bg-info">
+            <!-- INICIO NAVBAR-->
+            <nav class="navbar navbar-expand-lg bg-body-tertiary">
+                <div class="container-fluid">
+                    <a class="navbar-brand" href="#">social</a>
+                    <button class="navbar-toggler" type="button"
+                        data-bs-toggle="collapse"
+                        data-bs-target="#navbarSupportedContent"
+                        aria-controls="navbarSupportedContent"
+                        aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse"
+                        id="navbarSupportedContent">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link active"
+                                    href="#">Principal</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Preguntas</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Manuales</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Noticias</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Calendario</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Administración</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Organigrama</a></li>
+                            <li class="nav-item"><a class="nav-link"
+                                    href="#">Chat</a></li>
+                        </ul>
+                        <form class="d-flex" role="search">
+                            <input class="form-control me-2" type="search"
+                                placeholder="Buscar" aria-label="Search">
+                            <button class="btn btn-outline-success"
+                                type="submit">Buscar</button>
+                        </form>
+                    </div>
+                </div>
+            </nav>
+            <!-- FIN NAVBAR-->
+        </div>
+
+        <main class="container">
+            <div class="row">
+                <aside class="col-12 col-md-4 d-none d-md-block bg-warning">
+                    <div id="contact-list"></div>
+                </aside>
+
+                <article class="col-12 col-md-8 bg-primary">
+                    <div class="container">
+                        <div class="row">
+                            <div class="col-12 bg-success">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-2">
+                                            <figure
+                                                class="rounded-circle bg-warning">
+                                                <img src="assets/img/gon.png"
+                                                    class="img-fluid rounded-circle"
+                                                    alt="gon">
+                                            </figure>
+                                        </div>
+                                        <div class="col-10 text-center">
+                                            <h2>Gon Freecs</h2>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div id="chatCentral" class="col-12 bg-info">
+                                <div class="contenedorPadreRecibido">
+                                    <div class="recibido">
+                                        <p>Hola, ¿Cómo estás?</p>
+                                    </div>
+                                </div>
+                                <div class="contenedorPadreEnviado">
+                                    <div class="enviado">
+                                        <p>Hace tiempo no charlamos</p>
+                                    </div>
+                                </div>
+                                <div class="contenedorPadreRecibido">
+                                    <div class="recibido">
+                                        <p>¿Dónde estás viviendo?</p>
+                                    </div>
+                                </div>
+                                <div class="contenedorPadreEnviado">
+                                    <div class="enviado">
+                                        <p>Estoy viviendo en Chile</p>
+                                    </div>
+                                </div>
+                                <div class="contenedorPadreRecibido">
+                                    <div class="recibido">
+                                        <p>Qué bien. Bonito país</p>
+                                    </div>
+                                </div>
+                                <div class="contenedorPadreEnviado"
+                                    id="contenedorMensajeEnviado">
+                                    <div class="enviado">
+                                        <p id="parrafoMensajeEnviado"></p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-12 bg-secondary">
+                                <br>
+                                <button
+                                    class="btn btn-outline-info d-block d-md-none">Ver</button>
+                                <form>
+                                    <input type="text" id="txtMensaje">
+                                    <input type="button" class="btn btn-success"
+                                        value="Enviar" id="btnEnviar">
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </article>
+            </div>
+        </main>
+
+        <footer class="container bg-danger d-none d-md-block">
+            <p class="text-sm-end text-md-center">Elaborado por Elfar
+                Morantes</p>
+        </footer>
+
+        <script src="./assets/js/js_bootstrap/bootstrap.bundle.min.js"></script>
+        <script src="./assets/js/logica.js"></script>
+
+        <!-- JavaScript para generar lista de contactos -->
+        <script>
+        const contactos = [
+            { nombre: 'Gon Freecs', hora: '14:25pm', img: './assets/img/gon.png' },
+            { nombre: 'Killua Zoldyck', hora: '15:30pm', img: './assets/img/killua.png' },
+            { nombre: 'Leorio Paradinight', hora: '16:00pm', img: './assets/img/leorio.png' },
+            { nombre: 'Kurapika', hora: '17:45pm', img: './assets/img/kurapika.png' }
+        ];
+
+        const contactList = document.getElementById('contact-list');
+        contactos.forEach(contacto => {
+            contactList.innerHTML += `
+                <div class="row">
+                    <div class="col-4 bg-secondary rounded-circle">
+                        <img class="img-fluid" src="${contacto.img}" alt="${contacto.nombre}">
+                    </div>
+                    <div class="col-4 bg-primary">
+                        <p>${contacto.nombre}</p>
+                    </div>
+                    <div class="col-4 bg-danger">
+                        <small>${contacto.hora}</small>
+                    </div>
+                </div>`;
+        });
+    </script>
+    </body>
 </html>
