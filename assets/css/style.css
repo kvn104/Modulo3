@@ -1,0 +1,67 @@
+body {
+    font-family: 'Roboto', sans-serif;
+    background-image: url('background.jpg');
+    background-size: cover;
+    background-position: center;
+    background-color: rgba(0, 0, 0, 0.6);
+    /* Oscurece ligeramente */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.chat-container {
+    height: calc(100vh - 56px);
+}
+
+/* Sidebar */
+.sidebar {
+    display: none;
+}
+
+.conversation-list {
+    padding: 0;
+}
+
+.list-group-item {
+    cursor: pointer;
+}
+
+.unread .contact-name {
+    font-weight: bold;
+}
+
+/* Mensajes */
+.messages {
+    height: calc(100vh - 160px);
+    overflow-y: auto;
+}
+
+.message {
+    max-width: 70%;
+    padding: 10px;
+    border-radius: 15px;
+    word-wrap: break-word;
+}
+
+.sender {
+    align-self: flex-end;
+    margin-left: auto;
+}
+
+.receiver {
+    align-self: flex-start;
+}
+
+/* Responsividad */
+@media (min-width: 768px) {
+    .sidebar {
+        display: block;
+    }
+
+    .chat-box {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+}
